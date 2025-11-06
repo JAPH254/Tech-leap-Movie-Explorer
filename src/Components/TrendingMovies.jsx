@@ -36,10 +36,10 @@ const TrendingMovies = () => {
             </div>
 
             <div className="p-3">
-              <h3 className="text-md font-semibold text-gray-800 line-clamp-1">
+              <h3 className="text-sm font-semibold text-gray-800 line-clamp-1">
                 {movie.title}
               </h3>
-              <div className="flex items-center justify-between mt-2 text-sm text-gray-500">
+              <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
                 <span>⭐ {movie.vote_average?.toFixed(1)}</span>
                 <span>{movie.release_date?.slice(0, 4)}</span>
               </div>
