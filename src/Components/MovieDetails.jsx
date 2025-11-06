@@ -9,7 +9,6 @@ const MovieDetails = () => {
   useEffect(() => {
     fetchFromTMDB(`/movie/${id}`, { append_to_response: "credits,reviews" })
       .then(setMovie)
-      .catch(console.error);
   }, [id]);
   if (!movie) return <p className="p-4">Loading...</p>;
 
