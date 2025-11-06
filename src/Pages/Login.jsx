@@ -4,12 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const TOKEN_KEY = "auth_token";
 
 function generateToken() {
-  if (typeof crypto !== "undefined" && crypto.randomUUID) {
-    return crypto.randomUUID();
-  }
-  return (
-    Math.random().toString(36).slice(2) + "-" + Date.now().toString(36)
-  );
+  return Math.random().toString(36).slice(2) + "-" + Date.now().toString(36);
 }
 
 export default function Login() {
@@ -43,9 +38,11 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Username</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Username
+            </label>
             <input
-              className="mt-1 block w-full border rounded px-3 py-2"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               autoFocus
@@ -53,10 +50,12 @@ export default function Login() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Password</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
             <input
               type="password"
-              className="mt-1 block w-full border rounded px-3 py-2"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring focus:ring-blue-300"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -71,9 +70,14 @@ export default function Login() {
             Log In
           </button>
         </form>
-
-        <p className="mt-4 text-sm text-gray-500 text-center">
-          This is a demo login — any non-empty credentials will work.
+        <p className="text-center text-sm text-gray-600 mt-4">
+          Already have an account?{" "}
+          <span
+            onClick={() => navigate("/register")}
+            className="text-blue-600 hover:underline cursor-pointer"
+          >
+            Register
+          </span>
         </p>
       </div>
     </div>
