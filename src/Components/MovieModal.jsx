@@ -5,14 +5,11 @@ import { fetchFromTMDB } from "../api/tmdb";
 const MovieModal = ({ movieId, onClose }) => {
   const [movie, setMovie] = useState(null);
 
-  // Fetch movie details when modal opens
   useEffect(() => {
     if (movieId) {
       fetchFromTMDB(`/movie/${movieId}`, {
         append_to_response: "credits,reviews",
-      })
-        .then(setMovie)
-        .catch(console.error);
+      }).then(setMovie);
     }
   }, [movieId]);
 
@@ -65,7 +62,7 @@ const MovieModal = ({ movieId, onClose }) => {
                         src={
                           c.profile_path
                             ? `https://image.tmdb.org/t/p/w200${c.profile_path}`
-                            : "https://via.placeholder.com/90x90?text=No+Image"
+                            : ""
                         }
                         alt={c.name}
                         className="rounded-full w-20 h-20 object-cover mx-auto"
@@ -77,7 +74,9 @@ const MovieModal = ({ movieId, onClose }) => {
               </div>
             </div>
           ) : (
-            <div className="p-8 text-center text-gray-500">Loading movie details...</div>
+            <div className="p-8 text-center text-gray-500">
+              Loading movie details...
+            </div>
           )}
         </motion.div>
       </motion.div>
