@@ -1,21 +1,22 @@
-import { useState } from "react";
-import MovieDetails from "./Components/MovieDetails";
-import SearchMovies from "./Components/SearchMovies";
-import TrendingMovies from "./Components/TrendingMovies";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from "./Components/Home";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <>
-      <div className="App">
-        <h1>Movie Explorer</h1>
-        <SearchMovies />
-        <TrendingMovies />
-        <MovieDetails />
-      </div>
-    </>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/home"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 }
-
-export default App;
