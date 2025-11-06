@@ -16,7 +16,7 @@ const SearchMovies = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-sm">
       <form onSubmit={handleSearch} className="mb-4 flex gap-2">
         <input
           type="text"
