@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen py-2 px-4 bg-gray-100">
+      <div className="flex flex-col text-xl font-bold items-center justify-center min-h-screen py-2 px-4 bg-gray-100">
         <h1>Movie Explorer</h1>
         <SearchMovies />
         <TrendingMovies />
