@@ -35,8 +35,10 @@ install the dependencies
 ```
 npm install
 ```
+Create .env on the project root and add the following
+```
 VITE_TMDB_API_KEY=tmdb_api_key
-
+```
 If you don’t have one, sign up at https://www.themoviedb.org/
  run the app
  ```
