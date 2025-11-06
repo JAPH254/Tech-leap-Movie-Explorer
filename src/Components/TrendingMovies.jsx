@@ -14,7 +14,7 @@ const TrendingMovies = () => {
   }, [page]);
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="">
       <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
         🎬 The list of all movies
       </h2>
