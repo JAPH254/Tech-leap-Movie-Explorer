@@ -15,8 +15,8 @@ const TrendingMovies = () => {
 
   return (
     <div className="">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
-        🎬 The list of all movies
+      <h2 className="text-base font-bold mb-6 text-gray-800 text-center">
+        Gallery 🎬
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6">
