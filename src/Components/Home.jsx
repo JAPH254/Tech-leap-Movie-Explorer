@@ -6,7 +6,8 @@ function Home() {
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    const authKeys = ["auth_token", "username", "userToken"];
+    authKeys.forEach((key) => localStorage.removeItem(key));
     navigate("/login");
   };
 
@@ -15,7 +16,10 @@ function Home() {
       <div className="flex flex-col text-xl font-bold items-center justify-center min-h-screen py-2 px-4 bg-gray-100">
         <div className="flex w-full justify-between items-center mb-6">
           <h1>Movie Explorer</h1>
-          <button onClick={handleLogout} className="text-sm bg-red-500 text-white px-4 py-2 rounded">
+          <button
+            onClick={handleLogout}
+            className="text-sm bg-red-500 text-white px-4 py-2 rounded"
+          >
             Logout
           </button>
         </div>
